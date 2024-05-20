@@ -16,7 +16,7 @@ userRouter.post("/Signup",async (req, res) => {
       await newUser.save();
       res.status(201).json("User Created Successfully");
     } catch (error) {
-      res.status(500).json("Something went wrong");
+      res.status(500).json({ error: "Something went wrong", errorMessage: error.message });
     }
   }
   );
